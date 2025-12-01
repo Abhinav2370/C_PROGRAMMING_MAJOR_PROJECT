@@ -1,0 +1,30 @@
+# Ignore compiled output files
+*.o
+*.out
+*.exe
+
+# Ignore build directories
+/build/
+bin/
+obj/
+
+# Ignore common OS files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary files
+*.log
+*.tmp
+
+# Ignore backup files created by editors
+*~
+*.swp
+*.swo
+
+# Ignore VS Code settings (optional)
+.vscode/
+
+# Ignore CodeBlocks or CLion folders (optional)
+*.cbp
+.idea/
+c
