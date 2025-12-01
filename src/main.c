@@ -1,45 +1,29 @@
-#include <stdio.h>
-#include "ticket.h"
+#include "railway.h"
 
 int main() {
     struct Ticket t[MAX];
-    
-    for (int i = 0; i < MAX; i++) {
-        t[i].booked = 0;
-    }
-
     int choice;
-    
+
+    init(t);
+
     while (1) {
-        printf("\n===== Railway Ticket Management System =====\n");
-        printf("1. View Available Trains\n");
+        printf("\n--- Railway Ticket Menu ---\n");
+        printf("1. Display Tickets\n");
         printf("2. Book Ticket\n");
-        printf("3. View All Tickets\n");
-        printf("4. Cancel Ticket\n");
+        printf("3. Cancel Ticket\n");
+        printf("4. Show Train List\n");
         printf("5. Exit\n");
-        printf("Enter your choice: ");
+        printf("Enter choice: ");
         scanf("%d", &choice);
 
-        if (choice == 1) {
-            showTrains();
-        }
-        else if (choice == 2) {
-            bookTicket(t);
-        }
-        else if (choice == 3) {
-            viewTickets(t);
-        }
-        else if (choice == 4) {
-            cancelTicket(t);
-        }
-        else if (choice == 5) {
-            printf("\nExiting... Thank you!\n");
-            break;
-        }
-        else {
-            printf("\nInvalid choice! Try again.\n");
+        switch (choice) {
+            case 1: display(t); break;
+            case 2: book(t); break;
+            case 3: cancel(t); break;
+            case 4: showTrains(); break;
+            case 5: return 0;
+            default: printf("Invalid choice!\n");
         }
     }
-
-    return 0;
 }
+
